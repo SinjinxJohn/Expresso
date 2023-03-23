@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           actions: [ 
             Padding(
-              padding:  EdgeInsets.only(right:7),
+              padding:  const EdgeInsets.only(right:7),
               child: Image.asset(
               
                           "assets/account.png",
