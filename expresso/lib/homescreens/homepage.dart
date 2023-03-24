@@ -24,13 +24,19 @@ class _HomePageState extends State<HomePage> {
           actions: [ 
             Padding(
               padding:  const EdgeInsets.only(right:7),
-              child: Image.asset(
-              
-                          "assets/account.png",
-                          height: 33.67,
-                          width: 33.67,
-                          color: kPrimaryColor,
-                        ),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/profile');
+
+                },
+                child: Image.asset(
+                
+                            "assets/account.png",
+                            height: 33.67,
+                            width: 33.67,
+                            color: kPrimaryColor,
+                          ),
+              ),
             )
           ],
         ),

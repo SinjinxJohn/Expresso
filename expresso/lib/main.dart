@@ -2,6 +2,7 @@ import 'package:expresso/details_reg.dart';
 import 'package:expresso/dob.dart';
 import 'package:expresso/finallogin.dart';
 import 'package:expresso/homescreens/homepage.dart';
+import 'package:expresso/homescreens/profile.dart';
 import 'package:expresso/loginPage.dart';
 import 'package:expresso/pageview.dart';
 import 'package:expresso/register.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         '/dob':(context)=>const DOB(),
         '/finallog':(context)=>const FinalLog(),
         '/pageview':(context)=>const Pageview(),
-        '/homepage':(context)=>const HomePage()
+        '/homepage':(context)=>const HomePage(),
+        '/profile':(context) => const Profile()
       },
 
 
