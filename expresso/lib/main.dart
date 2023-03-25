@@ -8,8 +8,10 @@ import 'package:expresso/pageview.dart';
 import 'package:expresso/register.dart';
 import 'package:expresso/register_ver.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 void main() {
+  // Get.init();
   runApp(const MyApp());
 }
 
