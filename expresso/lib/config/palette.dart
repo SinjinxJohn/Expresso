@@ -4,3 +4,4 @@ const kPrimaryColor = Color.fromRGBO(54, 115, 226, 1);
 const ktexfieldColor = Color.fromRGBO(255, 255, 255, 1);
 const kButtonTextColor = Color.fromRGBO(255, 255, 255, 1);
 const kPriceColor=Color.fromRGBO(51, 204, 51, 1);
+
