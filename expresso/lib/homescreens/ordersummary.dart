@@ -369,6 +369,6 @@ class _OrderSumState extends State<OrderSum> {
                 ),
               ),
             ]))));
-    ;
+    
   }
 }

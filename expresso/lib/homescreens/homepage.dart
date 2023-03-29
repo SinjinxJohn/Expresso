@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.w700,
                               color: kButtonTextColor)),
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.pushNamed(context, '/manageorder');
                       },
                     ),
                   ),

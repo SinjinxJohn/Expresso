@@ -2,6 +2,8 @@ import 'package:expresso/details_reg.dart';
 import 'package:expresso/dob.dart';
 import 'package:expresso/finallogin.dart';
 import 'package:expresso/homescreens/homepage.dart';
+import 'package:expresso/homescreens/manageorders.dart';
+import 'package:expresso/homescreens/orderconfirm.dart';
 import 'package:expresso/homescreens/ordersummary.dart';
 import 'package:expresso/homescreens/profile.dart';
 import 'package:expresso/loginPage.dart';
@@ -37,6 +39,8 @@ class MyApp extends StatelessWidget {
         '/homepage': (context) => const HomePage(),
         '/profile': (context) => const Profile(),
         '/ordersum': (context) => const OrderSum(),
+        '/manageorder':(context)=>const ManageOrder(),
+        '/confirmorder':(context)=>const Confirmation()
       },
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
     );
