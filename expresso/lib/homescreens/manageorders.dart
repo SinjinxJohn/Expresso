@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../config/palette.dart';
 
@@ -52,7 +49,7 @@ class _ManageOrderState extends State<ManageOrder> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('SELECT BLOCK',style: TextStyle(color: Colors.grey),),
+            const Text('SELECT BLOCK',style: TextStyle(color: Colors.grey),),
             SizedBox(
               height: screenHeight*0.06,
               
@@ -75,7 +72,7 @@ class _ManageOrderState extends State<ManageOrder> {
                             ?Colors.black:Colors.grey,width: index==selectedItemIndex?1:0)
                             
                           ),
-                          child: Center(child: Text(block[index],style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700),)),
+                          child: Center(child: Text(block[index],style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w700),)),
                         )
                       ),
                     ),
@@ -107,7 +104,7 @@ class _ManageOrderState extends State<ManageOrder> {
                         ),
                         Padding(
                           padding:  EdgeInsets.only(top:screenWidth*0.04,left:screenWidth*0.01,),
-                          child: Text("NET MARGIN",style: TextStyle(color: Colors.grey,fontSize: 8),),
+                          child: const Text("NET MARGIN",style: TextStyle(color: Colors.grey,fontSize: 8),),
                         ),
                         Column(
                           children: [
@@ -132,12 +129,12 @@ class _ManageOrderState extends State<ManageOrder> {
                                   
                               return Container(
                                 height: 100,
-                                decoration: BoxDecoration(color: kPrimaryColor),
+                                decoration: const BoxDecoration(color: kPrimaryColor),
                                 child: TextButton(
                                   
                                   onPressed: (){
                                   Navigator.pushNamed(context, '/confirmorder');
-                                }, child: Text("CONFIRM YOUR ORDER",style: TextStyle(fontSize: 19,color: Colors.white),)),
+                                }, child: const Text("CONFIRM YOUR ORDER",style: TextStyle(fontSize: 19,color: Colors.white),)),
                               );
                             });
                               }
@@ -157,7 +154,7 @@ class _ManageOrderState extends State<ManageOrder> {
                                   
                                   // )]
                           ),
-                          child: Center(child: Text("REMOVE",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700),)),
+                          child: const Center(child: Text("REMOVE",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700),)),
                           ):
                           Container(
                             height: screenHeight*0.045,
@@ -167,7 +164,7 @@ class _ManageOrderState extends State<ManageOrder> {
                                   border: Border.all(color:
                                   kPrimaryColor,width: 2)
                           ),
-                          child: Center(child: Text("ADD+",style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.w700),)),
+                          child: const Center(child: Text("ADD+",style: TextStyle(color: kPrimaryColor,fontWeight: FontWeight.w700),)),
                           )
 
                           ),

@@ -1,18 +1,18 @@
 import 'package:expresso/details_reg.dart';
 import 'package:expresso/dob.dart';
 import 'package:expresso/finallogin.dart';
+import 'package:expresso/homescreens/confirmdetails.dart';
 import 'package:expresso/homescreens/homepage.dart';
 import 'package:expresso/homescreens/manageorders.dart';
 import 'package:expresso/homescreens/orderconfirm.dart';
+import 'package:expresso/homescreens/orderconfirmedcard.dart';
 import 'package:expresso/homescreens/ordersummary.dart';
 import 'package:expresso/homescreens/profile.dart';
 import 'package:expresso/loginPage.dart';
 import 'package:expresso/pageview.dart';
 import 'package:expresso/register.dart';
 import 'package:expresso/register_ver.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 void main() {
   // Get.init();
@@ -39,8 +39,10 @@ class MyApp extends StatelessWidget {
         '/homepage': (context) => const HomePage(),
         '/profile': (context) => const Profile(),
         '/ordersum': (context) => const OrderSum(),
-        '/manageorder':(context)=>const ManageOrder(),
-        '/confirmorder':(context)=>const Confirmation()
+        '/manageorder': (context) => const ManageOrder(),
+        '/confirmorder': (context) => const Confirmation(),
+        '/orderconfirmdetails': (context) => const ConfrimDetails(),
+        '/confirmordercard': (context) => const ConfirmedCard(),
       },
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
     );

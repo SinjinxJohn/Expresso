@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../config/palette.dart';
 
@@ -34,7 +32,7 @@ class _ConfirmationState extends State<Confirmation> {
           crossAxisAlignment: CrossAxisAlignment.center,
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("You have 90 seconds to confirm all orders you chose",style: TextStyle(fontWeight: FontWeight.w700),),
+            const Text("You have 90 seconds to confirm all orders you chose",style: TextStyle(fontWeight: FontWeight.w700),),
             SizedBox(
               height: screenHeight*0.8,
               child: ListView.builder(
@@ -73,10 +71,12 @@ class _ConfirmationState extends State<Confirmation> {
                                       
                                       // )]
                               ),
-                              child: Center(child: Text("CANCEL",style: TextStyle(color: Colors.red,fontWeight: FontWeight.w700),)),
+                              child: const Center(child: Text("CANCEL",style: TextStyle(color: Colors.red,fontWeight: FontWeight.w700),)),
                               )),
                           ),
-                            TextButton(onPressed: (){}, child: Container(
+                            TextButton(onPressed: (){
+                              Navigator.pushNamed(context,"/orderconfirmdetails");
+                            }, child: Container(
                               height: screenHeight*0.045,
                               width: screenWidth*0.42,
                               decoration: BoxDecoration(
@@ -89,7 +89,7 @@ class _ConfirmationState extends State<Confirmation> {
                                     
                                     // )]
                             ),
-                            child: Center(child: Text("ACCEPT DELIVERY",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700),)),
+                            child: const Center(child: Text("ACCEPT DELIVERY",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700),)),
                             ))
                         ],)
                       ],

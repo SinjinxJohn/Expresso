@@ -1,8 +1,5 @@
 import 'package:expresso/config/palette.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:get/get.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -300,15 +297,15 @@ class _ProfileState extends State<Profile> {
                 onTap: (){
                   showDialog(context: context, builder: (context){
                     return AlertDialog(
-                      title: Text("Are you sure you want to logout?"),
+                      title: const Text("Are you sure you want to logout?"),
                       actions: [
                         
                         TextButton(onPressed: (){
                           Navigator.pop(context);
-                        }, child: Text("Cancel",style: TextStyle(color: Colors.red),)),
+                        }, child: const Text("Cancel",style: TextStyle(color: Colors.red),)),
                         TextButton(onPressed: (){
                           Navigator.pushNamed(context, "/");
-                        }, child: Text("Logout")),
+                        }, child: const Text("Logout")),
                       ],
 
                     );
