@@ -11,7 +11,7 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    // Get.init(); 
+    // Get.init();
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -22,11 +22,22 @@ class _ProfileState extends State<Profile> {
         ),
         body: Padding(
           padding: EdgeInsets.only(
-              left: screenWidth * 0.05, top: screenHeight * 0.14),
+              left: screenWidth * 0.05, top: screenHeight * 0.07),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Container(
+                height: 90,
+                width: 95,
+                // color: kPrimaryColor,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: kPrimaryColor),
+              ),
+              SizedBox(
+                height: screenHeight * 0.02,
+              ),
               Padding(
                 padding: EdgeInsets.only(bottom: screenHeight * 0.04),
                 child: const Text(
@@ -291,28 +302,33 @@ class _ProfileState extends State<Profile> {
               //     //     Navigator.pop(context);
               //     //   }
 
-                  // );
-                  
-                   GestureDetector(
-                onTap: (){
-                  showDialog(context: context, builder: (context){
-                    return AlertDialog(
-                      title: const Text("Are you sure you want to logout?"),
-                      actions: [
-                        
-                        TextButton(onPressed: (){
-                          Navigator.pop(context);
-                        }, child: const Text("Cancel",style: TextStyle(color: Colors.red),)),
-                        TextButton(onPressed: (){
-                          Navigator.pushNamed(context, "/");
-                        }, child: const Text("Logout")),
-                      ],
+              // );
 
-                    );
-
-                  });
-                                   },
-
+              GestureDetector(
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text("Are you sure you want to logout?"),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text(
+                                  "Cancel",
+                                  style: TextStyle(color: Colors.red),
+                                )),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "/");
+                                },
+                                child: const Text("Logout")),
+                          ],
+                        );
+                      });
+                },
                 child: Padding(
                   padding: EdgeInsets.only(
                       top: screenHeight * 0.01,
@@ -373,13 +389,13 @@ class _ProfileState extends State<Profile> {
               //   decoration: BoxDecoration(color: kPrimaryColor,borderRadius: BorderRadius.circular(8)),
               // )),
 
-            //  Container(
-            //     child: Padding(
-            //       padding:  EdgeInsets.only(left:screenWidth*0.37,top: screenHeight*0.024,bottom: screenHeight*0.024,right: screenWidth*0.35),
-            //       child: Text('Sign Out',style: TextStyle(color: Colors.white),),
-            //     ),
-            //     decoration: BoxDecoration(color: kPrimaryColor,borderRadius: BorderRadius.circular(8)),
-            //   )
+              //  Container(
+              //     child: Padding(
+              //       padding:  EdgeInsets.only(left:screenWidth*0.37,top: screenHeight*0.024,bottom: screenHeight*0.024,right: screenWidth*0.35),
+              //       child: Text('Sign Out',style: TextStyle(color: Colors.white),),
+              //     ),
+              //     decoration: BoxDecoration(color: kPrimaryColor,borderRadius: BorderRadius.circular(8)),
+              //   )
             ],
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:expresso/details_reg.dart';
 import 'package:expresso/dob.dart';
 import 'package:expresso/finallogin.dart';
 import 'package:expresso/homescreens/confirmdetails.dart';
+import 'package:expresso/homescreens/deliveryconfirm.dart';
 import 'package:expresso/homescreens/homepage.dart';
 import 'package:expresso/homescreens/manageorders.dart';
 import 'package:expresso/homescreens/orderconfirm.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/confirmorder': (context) => const Confirmation(),
         '/orderconfirmdetails': (context) => const ConfrimDetails(),
         '/confirmordercard': (context) => const ConfirmedCard(),
+        '/deliveryconfirmed': (context) => const DeliveryConfirm(),
       },
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
     );

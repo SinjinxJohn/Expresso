@@ -23,21 +23,36 @@ class _DOBState extends State<DOB> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding:  EdgeInsets.only(left:screenWidth*0.242,bottom:screenHeight*0.34,right: screenWidth*0.126,top: 0.07*screenHeight),
+                padding: EdgeInsets.only(
+                    left: screenWidth * 0.242,
+                    bottom: screenHeight * 0.34,
+                    right: screenWidth * 0.126,
+                    top: 0.07 * screenHeight),
                 child: Row(
                   children: const [
-                    Text("Create a ",style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w700),),
-                    Text("Expresso Account",style: TextStyle(color: Color.fromRGBO(54, 115, 226, 1),fontSize: 17,fontWeight: FontWeight.w700),)
+                    Text(
+                      "Create a ",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      "Expresso Account",
+                      style: TextStyle(
+                          color: Color.fromRGBO(54, 115, 226, 1),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700),
+                    )
                   ],
                 ),
               ),
-              
+
               Padding(
                 padding: EdgeInsets.only(
                     top: screenHeight * 0.13,
                     left: screenWidth * 0.08,
-                    bottom: screenHeight*0.04
-                   ),
+                    bottom: screenHeight * 0.04),
                 child: const Text(
                   "Enter your birthday and gender",
                   style: TextStyle(
@@ -46,40 +61,60 @@ class _DOBState extends State<DOB> {
                       fontWeight: FontWeight.w700),
                 ),
               ),
-              
-      
+
               Padding(
-               padding:  EdgeInsets.only(
-                 left: screenWidth * 0.08,
-                   right: screenWidth * 0.08,
-                   bottom: screenHeight * 0.029),
-               child:  TextField(
-                controller: dateController,
-                
-                // keyboardType: TextInputType.datetime,
-                // inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.allow(RegExp(r'\d{4}-\d{2}-\d{2}'))],
-                onTap: ()async{
-                  date=(await showDatePicker(context: context, 
-                  initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2300)));
-                setState(() {
-                  
-                    dateController.text=DateFormat('yyyy-MM-dd').format(date!);
+                padding: EdgeInsets.only(
+                    left: screenWidth * 0.08,
+                    right: screenWidth * 0.08,
+                    bottom: screenHeight * 0.029),
+                child: TextField(
+                  controller: dateController,
 
-                  
-                });
+                  // keyboardType: TextInputType.datetime,
+                  // inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.allow(RegExp(r'\d{4}-\d{2}-\d{2}'))],
 
-
-                },
-                 decoration:const InputDecoration(
-                  suffixIcon: Icon(Icons.calendar_month),
-                  
-                     border: OutlineInputBorder(
-                         borderSide:
-                             BorderSide(width: 3, color: Color.fromRGBO(255, 255, 255, 1))),
-                     labelText: "DOB",
-                     floatingLabelBehavior: FloatingLabelBehavior.always),
-               ),
-                    ),
+                  // onTap: () async {
+                  //   date = (await showDatePicker(
+                  //       context: context,
+                  //       initialDate: DateTime.now(),
+                  //       firstDate: DateTime(2000),
+                  //       lastDate: DateTime(2300)));
+                  //   if (date != null) {
+                  //     print(
+                  //         'Date selected ${date!.day}-${date!.month}-${date!.year}');
+                  //   }
+                  //   setState(() {
+                  //     dateController.text =
+                  //         DateFormat('yyyy-MM-dd').format(date!);
+                  //   });
+                  // },
+                  decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.calendar_month),
+                        onPressed: () async {
+                          date = (await showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(2000),
+                              lastDate: DateTime(2300)));
+                          if (date != null) {
+                            print(
+                                'Date selected ${date!.day}-${date!.month}-${date!.year}');
+                          }
+                          setState(() {
+                            dateController.text =
+                                DateFormat('yyyy-MM-dd').format(date!);
+                          });
+                        },
+                      ),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              width: 3,
+                              color: Color.fromRGBO(255, 255, 255, 1))),
+                      labelText: "DOB",
+                      floatingLabelBehavior: FloatingLabelBehavior.always),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(
                     left: screenWidth * 0.08,
@@ -87,10 +122,10 @@ class _DOBState extends State<DOB> {
                     bottom: screenHeight * 0.029),
                 child: const TextField(
                   decoration: InputDecoration(
-                    
                       border: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(width: 3, color: Color.fromRGBO(255, 255, 255, 1))),
+                          borderSide: BorderSide(
+                              width: 3,
+                              color: Color.fromRGBO(255, 255, 255, 1))),
                       labelText: "Gender",
                       floatingLabelBehavior: FloatingLabelBehavior.always),
                 ),
@@ -121,7 +156,6 @@ class _DOBState extends State<DOB> {
               //     ),
               //   ),
               // ),
-              
             ],
           ),
         ),

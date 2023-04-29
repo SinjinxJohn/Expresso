@@ -171,7 +171,18 @@ class _HomePageState extends State<HomePage> {
                   height: screenHeight * 0.83,
                   width: screenWidth * 1.46,
                   decoration: BoxDecoration(
-                      border: Border.all(color: kPrimaryColor, width: 0.5),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(
+                            5.0,
+                            5.0,
+                          ),
+                          blurRadius: 10.0,
+                          spreadRadius: 2.0,
+                        )
+                      ],
+                      border: Border.all(color: kPrimaryColor, width: 2),
                       borderRadius: BorderRadius.circular(8)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

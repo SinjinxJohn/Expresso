@@ -114,7 +114,7 @@ class _ConfrimDetailsState extends State<ConfrimDetails> {
                   height: screenHeight * 0.36,
                   width: screenWidth * 0.86,
                   decoration: BoxDecoration(
-                      border: Border.all(color: kPrimaryColor, width: 1),
+                      border: Border.all(color: kPrimaryColor, width: 2),
                       borderRadius: BorderRadius.circular(8)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,7 +166,7 @@ class _ConfrimDetailsState extends State<ConfrimDetails> {
                         ),
                       ),
                       DotWidget(
-                        dashColor: kPriceColor,
+                        dashColor: kPrimaryColor,
                         dashHeight: 3,
                         dashWidth: 8,
                         totalWidth: screenWidth * 0.85,
@@ -219,7 +219,7 @@ class _ConfrimDetailsState extends State<ConfrimDetails> {
                   width: screenWidth * 0.86,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: kPrimaryColor, width: 1)),
+                      border: Border.all(color: kPrimaryColor, width: 2)),
                   child: Column(
                     children: [
                       Row(
@@ -293,7 +293,7 @@ class _ConfrimDetailsState extends State<ConfrimDetails> {
                                   label: Text(
                                     "Call",
                                     style: TextStyle(
-                                        fontSize: 18, color: kPrimaryColor),
+                                        fontSize: 15, color: kPrimaryColor),
                                   ),
                                 )),
                             Padding(
@@ -310,7 +310,7 @@ class _ConfrimDetailsState extends State<ConfrimDetails> {
                                   label: Text(
                                     "Chat",
                                     style: TextStyle(
-                                        fontSize: 18, color: kPrimaryColor),
+                                        fontSize: 15, color: kPrimaryColor),
                                   ),
                                 ))
                           ],
@@ -329,7 +329,10 @@ class _ConfrimDetailsState extends State<ConfrimDetails> {
                             // left: screenWidth * 0.13,
                             bottom: screenHeight * 0.02),
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, '/deliveryconfirmed');
+                            },
                             child: Container(
                               height: screenHeight * 0.045,
                               width: screenWidth * 0.37,

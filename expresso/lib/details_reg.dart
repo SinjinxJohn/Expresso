@@ -12,7 +12,6 @@ class _DetailsVerifState extends State<DetailsVerif> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    
 
     return Scaffold(
       body: SafeArea(
@@ -21,21 +20,36 @@ class _DetailsVerifState extends State<DetailsVerif> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding:  EdgeInsets.only(left:screenWidth*0.242,bottom:screenHeight*0.34,right: screenWidth*0.126,top: 0.07*screenHeight),
+                padding: EdgeInsets.only(
+                    left: screenWidth * 0.242,
+                    bottom: screenHeight * 0.34,
+                    right: screenWidth * 0.126,
+                    top: 0.07 * screenHeight),
                 child: Row(
                   children: const [
-                    Text("Create a ",style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w700),),
-                    Text("Expresso Account",style: TextStyle(color: Color.fromRGBO(54, 115, 226, 1),fontSize: 17,fontWeight: FontWeight.w700),)
+                    Text(
+                      "Create a ",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      "Expresso Account",
+                      style: TextStyle(
+                          color: Color.fromRGBO(54, 115, 226, 1),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700),
+                    )
                   ],
                 ),
               ),
-              
+
               Padding(
                 padding: EdgeInsets.only(
-                    top: screenHeight * 0.13,
+                    top: screenHeight * 0.07,
                     left: screenWidth * 0.08,
-                    bottom: screenHeight*0.04
-                   ),
+                    bottom: screenHeight * 0.04),
                 child: const Text(
                   "Enter your name",
                   style: TextStyle(
@@ -44,8 +58,7 @@ class _DetailsVerifState extends State<DetailsVerif> {
                       fontWeight: FontWeight.w700),
                 ),
               ),
-              
-      
+
               Padding(
                 padding: EdgeInsets.only(
                     left: screenWidth * 0.08,
@@ -54,8 +67,9 @@ class _DetailsVerifState extends State<DetailsVerif> {
                 child: const TextField(
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(width: 3, color: Color.fromRGBO(255, 255, 255, 1))),
+                          borderSide: BorderSide(
+                              width: 3,
+                              color: Color.fromRGBO(255, 255, 255, 1))),
                       labelText: "First Name",
                       floatingLabelBehavior: FloatingLabelBehavior.always),
                 ),
@@ -68,8 +82,9 @@ class _DetailsVerifState extends State<DetailsVerif> {
                 child: const TextField(
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(width: 3, color: Color.fromRGBO(255, 255, 255, 1))),
+                          borderSide: BorderSide(
+                              width: 3,
+                              color: Color.fromRGBO(255, 255, 255, 1))),
                       labelText: "Last Name",
                       floatingLabelBehavior: FloatingLabelBehavior.always),
                 ),
@@ -100,7 +115,6 @@ class _DetailsVerifState extends State<DetailsVerif> {
               //     ),
               //   ),
               // ),
-              
             ],
           ),
         ),

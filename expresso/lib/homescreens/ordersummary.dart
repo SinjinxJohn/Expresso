@@ -64,7 +64,7 @@ class _OrderSumState extends State<OrderSum> {
                       height: screenHeight * 0.5,
                       width: screenWidth * 1.46,
                       decoration: BoxDecoration(
-                          border: Border.all(color: kPrimaryColor, width: 0.8),
+                          border: Border.all(color: kPrimaryColor, width: 2),
                           borderRadius: BorderRadius.circular(8)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,7 +107,7 @@ class _OrderSumState extends State<OrderSum> {
                       height: screenHeight * 0.28,
                       width: screenWidth * 1.46,
                       decoration: BoxDecoration(
-                          border: Border.all(color: kPrimaryColor, width: 0.8),
+                          border: Border.all(color: kPrimaryColor, width: 2),
                           borderRadius: BorderRadius.circular(8)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,7 +229,7 @@ class _OrderSumState extends State<OrderSum> {
                       height: screenHeight * 0.23,
                       width: screenWidth * 1.46,
                       decoration: BoxDecoration(
-                          border: Border.all(color: kPrimaryColor, width: 0.8),
+                          border: Border.all(color: kPrimaryColor, width: 2),
                           borderRadius: BorderRadius.circular(8)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

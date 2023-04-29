@@ -2,7 +2,6 @@ import 'package:expresso/config/palette.dart';
 
 import 'package:flutter/material.dart';
 
-
 class Verification extends StatefulWidget {
   const Verification({super.key});
 
@@ -29,7 +28,7 @@ class _VerificationState extends State<Verification> {
                     right: screenWidth * 0.126,
                     top: 0.07 * screenHeight),
                 child: Row(
-                  children:const [
+                  children: const [
                     Text(
                       "Create a ",
                       style: TextStyle(
@@ -94,24 +93,21 @@ class _VerificationState extends State<Verification> {
               Padding(
                 padding: EdgeInsets.only(
                     left: screenWidth * 0.08,
-                    right: screenWidth * 0.08,
+                    right: screenWidth * 0.07,
                     bottom: screenHeight * 0.03),
                 child: Theme(
                   data: ThemeData(hintColor: kPrimaryColor),
                   child: TextField(
-                    
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
-                        suffix: TextButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(kPrimaryColor)),
+                        suffixIcon: TextButton(
+                            style: ButtonStyle(),
                             onPressed: () {},
-                            child:const Text(
+                            child: const Text(
                               "Resend",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: kPrimaryColor),
                             )),
-                        border:const OutlineInputBorder(
+                        border: const OutlineInputBorder(
                             borderSide: BorderSide(
                           color: kPrimaryColor,
                         )),
@@ -120,6 +116,9 @@ class _VerificationState extends State<Verification> {
                   ),
                 ),
               ),
+              // SizedBox(
+              //   width: 6,
+              // ),
               // SizedBox(width: screenWidth*0.01,),
               // TextButton(
               //   style: ButtonStyle(backgroundColor:MaterialStateProperty.all(kPrimaryColor)),
@@ -135,14 +134,14 @@ class _VerificationState extends State<Verification> {
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        suffix: TextButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(kPrimaryColor)),
+                        suffixIcon: TextButton(
+                            // style: ButtonStyle(
+                            //     backgroundColor:
+                            //         MaterialStateProperty.all(kPrimaryColor)),
                             onPressed: () {},
-                            child:const Text(
+                            child: const Text(
                               "Resend",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: kPrimaryColor),
                             )),
                         border: const OutlineInputBorder(
                             borderSide: BorderSide(color: kPrimaryColor)),
