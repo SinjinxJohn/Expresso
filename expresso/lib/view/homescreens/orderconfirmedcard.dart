@@ -1,4 +1,5 @@
 import 'package:expresso/config/palette.dart';
+import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -78,7 +79,7 @@ class _ConfirmedCardState extends State<ConfirmedCard> {
                 padding: EdgeInsets.only(top: screenHeight * 0.341),
                 child: TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, "/homepage");
+                      Navigator.pushNamed(context, RoutesName.home);
                     },
                     child: Text(
                       "GO BACK TO HOME MENU",

@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-class DOB extends StatefulWidget {
-  const DOB({super.key});
+class DetailsVerif extends StatefulWidget {
+  const DetailsVerif({super.key});
 
   @override
-  State<DOB> createState() => _DOBState();
+  State<DetailsVerif> createState() => _DetailsVerifState();
 }
 
-class _DOBState extends State<DOB> {
+class _DetailsVerifState extends State<DetailsVerif> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    TextEditingController dateController = TextEditingController();
-    DateTime? date;
 
     return Scaffold(
       body: SafeArea(
@@ -50,11 +47,11 @@ class _DOBState extends State<DOB> {
 
               Padding(
                 padding: EdgeInsets.only(
-                    top: screenHeight * 0.13,
+                    top: screenHeight * 0.07,
                     left: screenWidth * 0.08,
                     bottom: screenHeight * 0.04),
                 child: const Text(
-                  "Enter your birthday and gender",
+                  "Enter your name",
                   style: TextStyle(
                       fontSize: 20,
                       color: Color.fromRGBO(0, 0, 1, 1),
@@ -66,52 +63,15 @@ class _DOBState extends State<DOB> {
                 padding: EdgeInsets.only(
                     left: screenWidth * 0.08,
                     right: screenWidth * 0.08,
-                    bottom: screenHeight * 0.029),
-                child: TextField(
-                  controller: dateController,
-
-                  // keyboardType: TextInputType.datetime,
-                  // inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.allow(RegExp(r'\d{4}-\d{2}-\d{2}'))],
-
-                  // onTap: () async {
-                  //   date = (await showDatePicker(
-                  //       context: context,
-                  //       initialDate: DateTime.now(),
-                  //       firstDate: DateTime(2000),
-                  //       lastDate: DateTime(2300)));
-                  //   if (date != null) {
-                  //     print(
-                  //         'Date selected ${date!.day}-${date!.month}-${date!.year}');
-                  //   }
-                  //   setState(() {
-                  //     dateController.text =
-                  //         DateFormat('yyyy-MM-dd').format(date!);
-                  //   });
-                  // },
+                    bottom: screenHeight * 0.03),
+                child: const TextField(
                   decoration: InputDecoration(
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.calendar_month),
-                        onPressed: () async {
-                          date = (await showDatePicker(
-                              context: context,
-                              initialDate: DateTime.now(),
-                              firstDate: DateTime(2000),
-                              lastDate: DateTime(2300)));
-                          if (date != null) {
-                            print(
-                                'Date selected ${date!.day}-${date!.month}-${date!.year}');
-                          }
-                          setState(() {
-                            dateController.text =
-                                DateFormat('yyyy-MM-dd').format(date!);
-                          });
-                        },
-                      ),
+                    contentPadding: EdgeInsets.symmetric(vertical: 9,horizontal: 30),
                       border: OutlineInputBorder(
                           borderSide: BorderSide(
                               width: 3,
                               color: Color.fromRGBO(255, 255, 255, 1))),
-                      labelText: "DOB",
+                      labelText: "First Name",
                       floatingLabelBehavior: FloatingLabelBehavior.always),
                 ),
               ),
@@ -122,11 +82,12 @@ class _DOBState extends State<DOB> {
                     bottom: screenHeight * 0.029),
                 child: const TextField(
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 9,horizontal: 30),
                       border: OutlineInputBorder(
                           borderSide: BorderSide(
                               width: 3,
                               color: Color.fromRGBO(255, 255, 255, 1))),
-                      labelText: "Gender",
+                      labelText: "Last Name",
                       floatingLabelBehavior: FloatingLabelBehavior.always),
                 ),
               ),
@@ -137,7 +98,7 @@ class _DOBState extends State<DOB> {
               //       bottom: screenHeight * 0.019),
               //   child: GestureDetector(
               //     onTap: () {
-              //       Navigator.pushNamed(context, '/finallog');
+              //       Navigator.pushNamed(context, '/dob');
               //     },
               //     child: Container(
               //       decoration: BoxDecoration(

@@ -77,6 +77,7 @@ class _RegisterState extends State<Register> {
             child: const TextField(
               keyboardType: TextInputType.phone,
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: 9,horizontal: 30),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(
                           width: 3, color: Color.fromRGBO(255, 255, 255, 1))),
@@ -92,6 +93,7 @@ class _RegisterState extends State<Register> {
             child: const TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: 9,horizontal: 30),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(
                           width: 3, color: Color.fromRGBO(255, 255, 255, 1))),

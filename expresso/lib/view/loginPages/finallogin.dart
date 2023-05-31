@@ -1,6 +1,7 @@
+import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
-import 'config/palette.dart';
+import '../../config/palette.dart';
 
 class FinalLog extends StatefulWidget {
   const FinalLog({super.key});
@@ -16,7 +17,7 @@ class _FinalLogState extends State<FinalLog> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return WillPopScope(
-      onWillPop: ()=>Future.value(false),
+      onWillPop: () => Future.value(false),
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
@@ -25,8 +26,7 @@ class _FinalLogState extends State<FinalLog> {
               Container(
                 width: screenWidth * 1,
                 height: screenHeight * 0.47,
-                decoration:
-                    const BoxDecoration(color: Colors.white),
+                decoration: const BoxDecoration(color: Colors.white),
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -58,17 +58,14 @@ class _FinalLogState extends State<FinalLog> {
                   ),
                 ),
               ),
-    
-            
               Padding(
                 padding: EdgeInsets.only(
                     left: screenWidth * 0.08,
                     right: screenWidth * 0.08,
-                    bottom: screenHeight*0.05
-                    ),
+                    bottom: screenHeight * 0.05),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/');
+                    Navigator.pushNamed(context, RoutesName.Login);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -76,7 +73,6 @@ class _FinalLogState extends State<FinalLog> {
                         borderRadius: BorderRadius.circular(5)),
                     height: screenHeight * 0.05,
                     width: screenWidth * 0.84,
-                    
                     child: const Center(
                         child: Text(
                       "Login",
@@ -88,12 +84,10 @@ class _FinalLogState extends State<FinalLog> {
                   ),
                 ),
               ),
-          
-                  ],
-                ),
-              )
-      ,
+            ],
           ),
+        ),
+      ),
     );
   }
 }

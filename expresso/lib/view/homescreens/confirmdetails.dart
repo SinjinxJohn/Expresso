@@ -1,8 +1,9 @@
+import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../config/palette.dart';
+import '../../config/palette.dart';
 
 class ConfrimDetails extends StatefulWidget {
   const ConfrimDetails({super.key});
@@ -331,7 +332,7 @@ class _ConfrimDetailsState extends State<ConfrimDetails> {
                         child: TextButton(
                             onPressed: () {
                               Navigator.pushNamed(
-                                  context, '/deliveryconfirmed');
+                                  context, RoutesName.deliveryConfirmed);
                             },
                             child: Container(
                               height: screenHeight * 0.045,

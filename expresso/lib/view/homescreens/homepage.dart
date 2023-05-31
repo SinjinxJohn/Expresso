@@ -1,4 +1,5 @@
 import 'package:expresso/config/palette.dart';
+import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(right: 7),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/profile');
+                  Navigator.pushNamed(context, RoutesName.profile);
                 },
                 child: Image.asset(
                   "assets/account.png",
@@ -99,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.w700,
                               color: kButtonTextColor)),
                       onTap: () {
-                        Navigator.pushNamed(context, '/manageorder');
+                        Navigator.pushNamed(context, RoutesName.manageorders);
                       },
                     ),
                   ),
@@ -160,7 +161,7 @@ class _HomePageState extends State<HomePage> {
             // ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, "/ordersum");
+                Navigator.pushNamed(context, RoutesName.ordersum);
               },
               child: Padding(
                 padding: EdgeInsets.only(

@@ -1,4 +1,5 @@
 import 'package:expresso/config/palette.dart';
+import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -322,7 +323,8 @@ class _ProfileState extends State<Profile> {
                                 )),
                             TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, "/");
+                                  Navigator.pushNamed(
+                                      context, RoutesName.Login);
                                 },
                                 child: const Text("Logout")),
                           ],

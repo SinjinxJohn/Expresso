@@ -100,6 +100,7 @@ class _VerificationState extends State<Verification> {
                   child: TextField(
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 9,horizontal: 30),
                         suffixIcon: TextButton(
                             style: ButtonStyle(),
                             onPressed: () {},
@@ -134,6 +135,7 @@ class _VerificationState extends State<Verification> {
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(vertical: 9,horizontal: 30),
                         suffixIcon: TextButton(
                             // style: ButtonStyle(
                             //     backgroundColor:

@@ -1,6 +1,7 @@
+import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
-import '../config/palette.dart';
+import '../../config/palette.dart';
 
 class OrderSum extends StatefulWidget {
   const OrderSum({super.key});
@@ -349,7 +350,7 @@ class _OrderSumState extends State<OrderSum> {
                         bottom: screenHeight * 0.019),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, "/confirmordercard");
+                        Navigator.pushNamed(context, RoutesName.confirmcard);
                       },
                       child: Container(
                         decoration: BoxDecoration(

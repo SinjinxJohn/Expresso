@@ -1,6 +1,7 @@
+import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
-import '../config/palette.dart';
+import '../../config/palette.dart';
 
 class ManageOrder extends StatefulWidget {
   const ManageOrder({super.key});
@@ -159,7 +160,8 @@ class _ManageOrderState extends State<ManageOrder> {
                                                     onPressed: () {
                                                       Navigator.pushNamed(
                                                           context,
-                                                          '/confirmorder');
+                                                          RoutesName
+                                                              .confirmOrder);
                                                     },
                                                     child: const Text(
                                                       "CONFIRM YOUR ORDER",

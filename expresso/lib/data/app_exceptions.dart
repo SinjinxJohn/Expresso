@@ -40,3 +40,17 @@ class InvalidInputException extends AppException {
   InvalidInputException._(String? message, String prefix)
       : super._(message, prefix);
 }
+
+class NotFoundException extends AppException {
+  NotFoundException([String? message]) : super(message, "Not Found");
+
+  NotFoundException._(String? message, String prefix)
+      : super._(message, prefix);
+}
+
+class NoContentException extends AppException {
+  NoContentException([String? message]) : super(message, "No contet found");
+
+  NoContentException._(String? message, String prefix)
+      : super._(message, prefix);
+}
