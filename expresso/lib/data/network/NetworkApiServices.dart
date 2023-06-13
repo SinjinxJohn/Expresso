@@ -24,7 +24,7 @@ class NetworkApiServices extends BaseApiService {
     dynamic responseJson;
     try {
       final response = await
-          http.post(Uri.parse(url), body: data,
+          http.post(Uri.parse(url), body: json.encode(data),headers: {'Content-type':'application/json; charset=utf-8'}
           ).timeout(const Duration(seconds: 15));
           
       responseJson = returnResponse(response);
@@ -38,12 +38,18 @@ class NetworkApiServices extends BaseApiService {
 
   dynamic returnResponse(http.Response response) {
     switch (response.statusCode) {
+      case 200:
+      dynamic responseJson = jsonDecode(response.body);
+        return responseJson;
+
       case 201:
         dynamic responseJson = jsonDecode(response.body);
-        return responseJson;
-        // var accessToken = responseJson['token'];
-        // var userDetails = responseJson['user'];
-        // return {'token':accessToken,'userDetails':userDetails};
+        // return responseJson;
+        var accessToken = responseJson['token'];
+        var userDetails = responseJson['user'];
+        print(accessToken);
+        print(userDetails);
+        return {'token':accessToken,'userDetails':userDetails};
       case 204:
         throw NoContentException(response.body.toString());
       case 400:

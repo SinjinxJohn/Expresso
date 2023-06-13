@@ -11,7 +11,7 @@ class Utils{
 
   }
 
-  static snackBar(String message,BuildContext context){
+  static snackBar(String message,BuildContext context,Color color){
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         // margin: EdgeInsets.all(),
@@ -21,7 +21,7 @@ class Utils{
         elevation: 30,
         duration: const Duration(seconds: 1),
         
-        backgroundColor: Colors.red,
+        backgroundColor: color,
         // showCloseIcon: ,
       
         

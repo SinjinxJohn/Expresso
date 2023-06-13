@@ -24,7 +24,7 @@ class AuthViewModel with ChangeNotifier{
     
     _myrepo.loginApi(data).then((value) {
       // setLoading(false);
-      Utils.snackBar("Login successful", context);
+      Utils.snackBar("Login successful", context,Colors.green);
       Navigator.pushNamed(context, RoutesName.home);
       if(kDebugMode){
         print(value.toString());
@@ -32,7 +32,7 @@ class AuthViewModel with ChangeNotifier{
       
     }).onError((error, stackTrace){
       if(kDebugMode){
-        Utils.snackBar('''$error''',context);
+        Utils.snackBar('''$error''',context,Colors.red);
         print(error.toString());
       }
 
@@ -43,7 +43,7 @@ class AuthViewModel with ChangeNotifier{
     
     _myrepo.signUpApi(data).then((value) {
       // setLoading(false);
-      Utils.snackBar("Sign Up successful", context);
+      Utils.snackBar("Sign Up successful", context,Colors.green);
       Navigator.pushNamed(context, RoutesName.finalLog);
       if(kDebugMode){
         print(value.toString());
@@ -51,7 +51,7 @@ class AuthViewModel with ChangeNotifier{
       
     }).onError((error, stackTrace){
       if(kDebugMode){
-        Utils.snackBar(error.toString(),context);
+        Utils.snackBar(error.toString(),context,Colors.red);
         print(error.toString());
       }
 

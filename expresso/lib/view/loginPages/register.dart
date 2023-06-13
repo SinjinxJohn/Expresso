@@ -345,48 +345,48 @@ class _RegisterState extends State<Register> {
                 left: screenWidth * 0.08, right: screenWidth * 0.08),
             child: TextButton(
               onPressed: () {
-                // if (_emailcontroller.text.isEmpty ||
-                //     nameController.text.isEmpty ||
-                //     userController.text.isEmpty ||
-                //     _regnoController.text.isEmpty ||
-                //     _passwordController.text.isEmpty ||
-                //     _passwordConfirmController.text.isEmpty ||
-                //     _phonecontroller.text.isEmpty) {
-                //   Utils.snackBar(
-                //       "Please enter all the details to proceed", context);
-                // } else if (_passwordController.text.length < 8) {
-                //   Utils.snackBar(
-                //       "Password should have a minimum of 8 charachters",
-                //       context);
-                // } else {
+                if (_emailcontroller.text.isEmpty ||
+                    nameController.text.isEmpty ||
+                    userController.text.isEmpty ||
+                    _regnoController.text.isEmpty ||
+                    _passwordController.text.isEmpty ||
+                    _passwordConfirmController.text.isEmpty ||
+                    _phonecontroller.text.isEmpty) {
+                  Utils.snackBar(
+                      "Please enter all the details to proceed", context,errorColor);
+                } else if (_passwordController.text.length < 8) {
+                  Utils.snackBar(
+                      "Password should have a minimum of 8 charachters",
+                      context,errorColor);
+                } else {
                   // postData();
-                  // Map data = {
-                  //   'name': "Kanishk Prasad",
-                  //   'email': "kanishk.prasad2021@vitstudent.ac.in",
-                  //   'username': "expo",
-                  //   'regNo': "21BCE2054",
-                  //   'password': "123456789",
-                  //   'confirmPassword':
-                  //       "123456789",
-                  //   'phoneNo': "+917011881396",
-                  //   // 'profilePic':_imageController.imagePath.toString(),
-                  // };
-                  // authViewModelreg.signUpApi(data, context);
-                  // if (kDebugMode) {
-                  //   print("api hit");
-                  //   print(nameController.text.toString());
-                  //   // print(nameController.text.toString());
-                  //   print(_emailcontroller.text.toString());
-                  //   print(userController.text.toString());
-                  //   print(_regnoController.text.toString());
-                  //   print(_passwordController.text.toString());
-                  //   print(_passwordConfirmController.text.toString());
-                  //   print(_phonecontroller.text.toString());
-                    // print(_imageController.imagePath.toString());
-                    // print(_imageController.imagePath.toString());
-                  // }
-                  Navigator.pushNamed(context, RoutesName.finalLog);
-                // }
+                  Map data = {
+                    'name': nameController.text.toString(),
+                    'email': _emailcontroller.text.toString(),
+                    'username': userController.text.toString(),
+                    'regNo': _regnoController.text.toString(),
+                    'password': _passwordController.text.toString(),
+                    'confirmPassword':
+                        _passwordConfirmController.text.toString(),
+                    'phoneNo': _phonecontroller.text.toString(),
+                    // 'profilePic':_imageController.imagePath.toString(),
+                  };
+                  authViewModelreg.signUpApi(data, context);
+                  if (kDebugMode) {
+                    print("api hit");
+                    print(nameController.text.toString());
+                    // print(nameController.text.toString());
+                    print(_emailcontroller.text.toString());
+                    print(userController.text.toString());
+                    print(_regnoController.text.toString());
+                    print(_passwordController.text.toString());
+                    print(_passwordConfirmController.text.toString());
+                    print(_phonecontroller.text.toString());
+                    print(_imageController.imagePath.toString());
+                    print(_imageController.imagePath.toString());
+                  }
+                  // Navigator.pushNamed(context, RoutesName.finalLog);
+                }
               },
               child: Container(
                 decoration: BoxDecoration(

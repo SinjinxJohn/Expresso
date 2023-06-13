@@ -5,7 +5,7 @@
 import 'dart:convert';
 
 import 'package:expresso/config/palette.dart';
-import 'package:expresso/models/login.dart';
+// import 'package:expresso/models/login.dart';
 import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -144,23 +144,23 @@ class _LoginPageState extends State<LoginPage> {
                 
                 onPressed: (){
 
-                // if(_emailcontroller.text.isEmpty){
-                //       Utils.snackBar("Please enter your email", context);
-                //     }else if(_passwordcontroller.text.isEmpty){
-                //       Utils.snackBar("Please enter your password", context);
-                //     }else{
-                //       // Map data = {
-                //       //   'email':_emailcontroller.text.toString(),
-                //       //   'password':_passwordcontroller.text.toString()
-                //       // };
-                //       // authViewModel.loginApi(data,context);
-                //       // if(kDebugMode){
-                //       //   print("api hit");
-                //       //   print(_emailcontroller.text.toString());
-                //       //   print(_passwordcontroller.text.toString());
-                //       }
-                      Navigator.pushNamed(context, RoutesName.home);
-                    // }
+                if(_emailcontroller.text.isEmpty){
+                      Utils.snackBar("Please enter your email", context,errorColor);
+                    }else if(_passwordcontroller.text.isEmpty){
+                      Utils.snackBar("Please enter your password", context,errorColor);
+                    }else{
+                      Map data = {
+                        'email':_emailcontroller.text.toString(),
+                        'password':_passwordcontroller.text.toString()
+                      };
+                      authViewModel.loginApi(data,context);
+                      if(kDebugMode){
+                        print("api hit");
+                        print(_emailcontroller.text.toString());
+                        print(_passwordcontroller.text.toString());
+                      }
+                      // Navigator.pushNamed(context, RoutesName.home);
+                    }
             
               }, child: Container(
                     
