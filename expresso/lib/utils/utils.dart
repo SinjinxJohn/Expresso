@@ -14,7 +14,7 @@ class Utils{
   static snackBar(String message,BuildContext context){
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        margin:const EdgeInsets.all(8),
+        // margin: EdgeInsets.all(),
         behavior: SnackBarBehavior.floating,
         // width: 100,
         
@@ -25,7 +25,7 @@ class Utils{
         // showCloseIcon: ,
       
         
-        content:  Row(children:[const Icon(Icons.error,color: Colors.white,),const SizedBox(width: 6,), Text(message,style: const TextStyle(color: Colors.white),)]),)
+        content:  Row(children:[const Icon(Icons.error,color: Colors.white,),const SizedBox(width: 6,), Expanded(child: Text(message,style: const TextStyle(color: Colors.white),))]),)
     );
   }
 

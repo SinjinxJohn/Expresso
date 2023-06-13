@@ -37,6 +37,7 @@ dependencies:
   fluttertoast: ^8.2.1
   provider: ^6.0.5
   http: ^0.13.6
+  image_capture_field: ^0.3.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0

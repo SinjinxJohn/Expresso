@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 
 import '../../view/loginPages/finallogin.dart';
 import '../../view/loginPages/loginPage.dart';
-import '../../view/loginPages/pageview.dart';
+// import '../../view/loginPages/pageview.dart';
 import '../../view/loginPages/register.dart';
 
 class Routes {
@@ -28,7 +28,7 @@ class Routes {
       case RoutesName.home:
         return MaterialPageRoute(builder: ((context) => const HomePage()));
       case RoutesName.pageview:
-        return MaterialPageRoute(builder: ((context) => const Pageview()));
+        // return MaterialPageRoute(builder: ((context) => const Pageview()));
       case RoutesName.finalLog:
         return MaterialPageRoute(builder: ((context) => const FinalLog()));
       case RoutesName.profile:

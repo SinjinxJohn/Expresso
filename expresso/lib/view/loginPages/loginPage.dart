@@ -2,11 +2,15 @@
 // ignore: file_names
 // ignore: file_names
 // ignore: file_names
+import 'dart:convert';
+
 import 'package:expresso/config/palette.dart';
+import 'package:expresso/models/login.dart';
 import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:expresso/utils/utils.dart';
+import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
 import '../../view_model/auth_view_model.dart';
@@ -22,6 +26,26 @@ class _LoginPageState extends State<LoginPage> {
   final ValueNotifier<bool> _value = ValueNotifier<bool>(true);
   final TextEditingController _emailcontroller = TextEditingController();
   final TextEditingController _passwordcontroller = TextEditingController();
+
+
+  // Future<Login> loginApi(String name,String password)async{
+  //   final response = await http.post(Uri.parse('https://expresso-img9.onrender.com/users/login'),
+  //   headers: <String,String>{
+  //     'Content-type':'application/json; charset=UTF-8',
+  //   },
+  //   body: jsonEncode(<String,String>{
+  //     'name':name,
+  //     'password':password
+
+  //   })
+  //   );
+  //   if(response.statusCode==201){
+  //     return Login.fromJson(jsonDecode(response.body));
+
+  //   }else{
+  //     throw Exception('Failed to create login');
+  //   }
+  // }
 
   FocusNode email = FocusNode();
   FocusNode password = FocusNode();
@@ -52,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  top: screenHeight * 0.23,
+                  top: screenHeight * 0.16,
                   left: screenWidth * 0.08,
                   bottom: screenHeight * 0.02),
               child: const Text(
@@ -112,54 +136,56 @@ class _LoginPageState extends State<LoginPage> {
               ),
             );
             }),
-            
             Padding(
               padding: EdgeInsets.only(
                 left: screenWidth * 0.08,
-                right: screenWidth * 0.08,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  if(_emailcontroller.text.isEmpty){
-                    Utils.snackBar("Please enter your email", context);
-                  }else if(_passwordcontroller.text.isEmpty){
-                    Utils.snackBar("Please enter your password", context);
-                  }else{
-                    Map data = {
-                      'email':_emailcontroller.text.toString(),
-                      'password':_passwordcontroller.text.toString()
-                    };
-                    authViewModel.loginApi(data,context);
-                    if(kDebugMode){
-                      print("api hit");
-                    }
-                    // Navigator.pushNamed(context, RoutesName.home);
-                  }
-                  
-                },
-                child: Container(
-                  
-                  decoration: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(5)),
-                  height: screenHeight * 0.05,
-                  width: screenWidth * 0.84,
-                  child: const Center(
-                      child: Text(
-                    "Login",
-                    style: TextStyle(
-                        color: kButtonTextColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700),
-                  )),
-                ),
-              ),
+                right: screenWidth * 0.08),
+              child: TextButton(
+                
+                onPressed: (){
+
+                // if(_emailcontroller.text.isEmpty){
+                //       Utils.snackBar("Please enter your email", context);
+                //     }else if(_passwordcontroller.text.isEmpty){
+                //       Utils.snackBar("Please enter your password", context);
+                //     }else{
+                //       // Map data = {
+                //       //   'email':_emailcontroller.text.toString(),
+                //       //   'password':_passwordcontroller.text.toString()
+                //       // };
+                //       // authViewModel.loginApi(data,context);
+                //       // if(kDebugMode){
+                //       //   print("api hit");
+                //       //   print(_emailcontroller.text.toString());
+                //       //   print(_passwordcontroller.text.toString());
+                //       }
+                      Navigator.pushNamed(context, RoutesName.home);
+                    // }
+            
+              }, child: Container(
+                    
+                    decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(5)),
+                    height: screenHeight * 0.05,
+                    width: screenWidth * 0.84,
+                    child: const Center(
+                        child: Text(
+                      "Login",
+                      style: TextStyle(
+                          color: kButtonTextColor,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w700),
+                    )),
+                  ),),
             ),
+            
+            
             Padding(
               padding: EdgeInsets.only(
                   left: screenWidth * 0.33,
                   right: screenWidth * 0.23,
-                  top: screenHeight * 0.02),
+                  top: screenHeight * 0.01),
               child: Row(
                 children: [
                   const Text(
@@ -169,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, RoutesName.pageview);
+                        Navigator.pushNamed(context, RoutesName.register);
                       },
                       child: const Text(
                         "SIGN UP",

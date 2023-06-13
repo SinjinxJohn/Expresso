@@ -1,21 +1,10 @@
 class Login{
-  late String email;
-  late String password;
+  final String name;
+  final String password;
 
+  const Login({required this.name,required this.password});
+  factory Login.fromJson(Map<String,dynamic> json){
+    return Login(name: json['name'], password: json['password']);
 
-  Login({
-    required this.email,
-    required this.password,
-
-  });
-
-  Map<String,dynamic> toJson(){
-    final Map<String,dynamic> data = <String,dynamic>{};
-
-
-    data['email']=email;
-    data['password']=password;
-
-    return data;
   }
 }

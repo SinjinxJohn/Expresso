@@ -13,7 +13,7 @@ class AppException implements Exception {
 }
 
 class FetchDataException extends AppException {
-  FetchDataException([String? message]) : super(message, "Data Exception");
+  FetchDataException([String? message]) : super(message, "No Internet Connection");
 
   FetchDataException._(String? message, String prefix)
       : super._(message, prefix);
@@ -42,15 +42,22 @@ class InvalidInputException extends AppException {
 }
 
 class NotFoundException extends AppException {
-  NotFoundException([String? message]) : super(message, "Not Found");
+  NotFoundException([String? message]) : super(message, "User Not Found");
 
   NotFoundException._(String? message, String prefix)
       : super._(message, prefix);
 }
 
 class NoContentException extends AppException {
-  NoContentException([String? message]) : super(message, "No contet found");
+  NoContentException([String? message]) : super(message, "No content found");
 
   NoContentException._(String? message, String prefix)
+      : super._(message, prefix);
+}
+
+class ServerException extends AppException {
+  ServerException([String? message]) : super(message, " An unexpected error occurred on the server while processing the request.");
+
+  ServerException._(String? message, String prefix)
       : super._(message, prefix);
 }
