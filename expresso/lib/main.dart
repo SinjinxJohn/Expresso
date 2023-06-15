@@ -2,8 +2,10 @@
 import 'package:expresso/utils/routes/routes.dart';
 import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:expresso/view_model/auth_view_model.dart';
+import 'package:expresso/view_model/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 
 void main() {
   // Get.init();
@@ -17,7 +19,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_)=>AuthViewModel())],
+      providers: [
+        ChangeNotifierProvider(create: (_)=>AuthViewModel()),
+        ChangeNotifierProvider(create: (_)=>UserViewModel())
+
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: RoutesName.Login,

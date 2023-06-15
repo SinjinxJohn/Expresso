@@ -1,6 +1,10 @@
 import 'package:expresso/config/palette.dart';
+import 'package:expresso/data/model/user_model.dart';
 import 'package:expresso/utils/routes/routes_name.dart';
+import 'package:expresso/utils/shared_service.dart';
+import 'package:expresso/view_model/user_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,8 +14,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
+    final userViewModel = Provider.of<UserViewModel>(context);
+    // user = userViewModel.getUser() as UserModel?;
+    // print(user!.user!.name);
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -172,10 +184,10 @@ class _HomePageState extends State<HomePage> {
                   height: screenHeight * 0.83,
                   width: screenWidth * 1.46,
                   decoration: BoxDecoration(
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.white,
-                          offset: const Offset(
+                          offset: Offset(
                             5.0,
                             5.0,
                           ),
@@ -223,6 +235,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       //add the product name and price here
+
                       Padding(
                         padding: EdgeInsets.only(
                             left: screenWidth * 0.05, top: screenHeight * 0.4),
@@ -268,4 +281,5 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
 }

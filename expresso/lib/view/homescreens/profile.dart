@@ -2,6 +2,9 @@ import 'package:expresso/config/palette.dart';
 import 'package:expresso/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
+import '../../data/model/user_model.dart';
+import '../../utils/shared_service.dart';
+
 class Profile extends StatefulWidget {
   const Profile({super.key});
 
@@ -10,6 +13,27 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  UserModel? user;
+  String name = "";
+  String phoneNo = "";
+  String email = "";
+
+  //getting the userData
+  Future<void> getUserData() async {
+    user = await SharedService.loginDetails();
+    setState(() {
+      name = user!.user!.name.toString();
+      phoneNo = user!.user!.phoneNo.toString();
+      email = user!.user!.email.toString();
+    });
+  }
+
+
+  @override
+  void initState() {
+      getUserData();
+  }
+
   @override
   Widget build(BuildContext context) {
     // Get.init();
@@ -41,8 +65,8 @@ class _ProfileState extends State<Profile> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: screenHeight * 0.04),
-                child: const Text(
-                  "SHAURYA SHARMA",
+                child: Text(
+                  name,
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 19),
                 ),
               ),
@@ -122,8 +146,8 @@ class _ProfileState extends State<Profile> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: screenWidth * 0.11),
-                          child: const Text(
-                            "+91 XXXX-XXXXXX",
+                          child: Text(
+                            phoneNo,
                             style: TextStyle(
                                 fontSize: 17, fontWeight: FontWeight.w700),
                           ),
@@ -156,8 +180,8 @@ class _ProfileState extends State<Profile> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: screenWidth * 0.11),
-                          child: const Text(
-                            "shauryathebest@gmail.com",
+                          child: Text(
+                            email,
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w700),
                           ),

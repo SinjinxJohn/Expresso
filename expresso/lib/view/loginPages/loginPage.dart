@@ -1,7 +1,3 @@
-// ignore: file_names
-// ignore: file_names
-// ignore: file_names
-// ignore: file_names
 import 'dart:convert';
 
 import 'package:expresso/config/palette.dart';
@@ -156,7 +152,8 @@ class _LoginPageState extends State<LoginPage> {
                       authViewModel.loginApi(data,context);
                       if(kDebugMode){
                         print("api hit");
-                        print(data.toString());
+                        print(_emailcontroller.text.toString());
+                        print(_passwordcontroller.text.toString());
                       }
                       // Navigator.pushNamed(context, RoutesName.home);
                     }

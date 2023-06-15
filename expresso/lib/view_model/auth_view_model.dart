@@ -1,8 +1,12 @@
+import 'package:expresso/view_model/user_view_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../data/model/user_model.dart';
 import '../repository/auth_repository.dart';
 import '../utils/routes/routes_name.dart';
+import '../utils/shared_service.dart';
 import '../utils/utils.dart';
 
 class AuthViewModel with ChangeNotifier{
@@ -22,8 +26,11 @@ class AuthViewModel with ChangeNotifier{
   Future<void> loginApi(dynamic data,BuildContext context)async{
     // setLoading(true);
     
-    _myrepo.loginApi(data).then((value) {
+    _myrepo.loginApi(data).then((value)  {
       // setLoading(false);
+
+
+
       Utils.snackBar("Login successful", context,Colors.green);
       Navigator.pushNamed(context, RoutesName.home);
       if(kDebugMode){
@@ -38,6 +45,7 @@ class AuthViewModel with ChangeNotifier{
 
     });
 
+    
   }
   Future<void> signUpApi(dynamic data,BuildContext context)async{
     
