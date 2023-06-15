@@ -1,11 +1,14 @@
 import 'dart:convert';
 // import 'dart:html';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:expresso/data/app_exceptions.dart';
 import 'package:expresso/data/network/BaseApiServices.dart';
 
 class NetworkApiServices extends BaseApiService {
+  final storage = const FlutterSecureStorage();
   @override
   Future getGetApiResponse(String url) async {
     dynamic responseJson;
@@ -15,7 +18,7 @@ class NetworkApiServices extends BaseApiService {
       responseJson = returnResponse(response);
     } on SocketException {
       throw FetchDataException('No internet connection');
-    } 
+    }
     return responseJson;
   }
 
@@ -23,33 +26,43 @@ class NetworkApiServices extends BaseApiService {
   Future getPostApiResponse(String url, dynamic data) async {
     dynamic responseJson;
     try {
-      final response = await
-          http.post(Uri.parse(url), body: json.encode(data),headers: {'Content-type':'application/json; charset=utf-8'}
-          ).timeout(const Duration(seconds: 15));
-          
+      final response = await http.post(Uri.parse(url),
+          body: json.encode(data),
+          headers: {
+            'Content-type': 'application/json; charset=utf-8'
+          }).timeout(const Duration(seconds: 15));
+
       responseJson = returnResponse(response);
     } on SocketException {
       throw FetchDataException('No internet connection');
     }
     return responseJson;
   }
-  
 
-
-  dynamic returnResponse(http.Response response) {
+  dynamic returnResponse(http.Response response) async {
     switch (response.statusCode) {
       case 200:
-      dynamic responseJson = jsonDecode(response.body);
-        return responseJson;
+        dynamic responseJson = jsonDecode(response.body);
+        var accessToken = responseJson['token'];
+        var userDetails = responseJson['user'];
+        await storage.write(key: 'Token', value: responseJson['token']);
+        if (kDebugMode) {
+          print(accessToken);
+          print(userDetails);
+        }
+        return {'token': accessToken, 'userDetails': userDetails};
 
       case 201:
         dynamic responseJson = jsonDecode(response.body);
         // return responseJson;
         var accessToken = responseJson['token'];
         var userDetails = responseJson['user'];
-        print(accessToken);
-        print(userDetails);
-        return {'token':accessToken,'userDetails':userDetails};
+        await storage.write(key: 'Token', value: responseJson['token']);
+        if (kDebugMode) {
+          print(accessToken);
+          print(userDetails);
+        }
+        return {'token': accessToken, 'userDetails': userDetails};
       case 204:
         throw NoContentException(response.body.toString());
       case 400:
